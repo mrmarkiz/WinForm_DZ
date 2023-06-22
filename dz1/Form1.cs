@@ -14,9 +14,21 @@ namespace dz1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int.TryParse(textBoxHours.Text, out hours);
-            int.TryParse(textBoxMinutes.Text, out minutes);
-            int.TryParse(textBoxSeconds.Text, out seconds);
+            if (!int.TryParse(textBoxHours.Text, out hours))
+            {
+                MessageBox.Show($"Incorrect or empty text in field: {label1.Text}");
+                return;
+            }
+            if (!int.TryParse(textBoxMinutes.Text, out hours))
+            {
+                MessageBox.Show($"Incorrect or empty text in field: {label2.Text}");
+                return;
+            }
+            if (!int.TryParse(textBoxSeconds.Text, out hours))
+            {
+                MessageBox.Show($"Incorrect or empty text in field: {label3.Text}");
+                return;
+            }
             date = dateTimePicker1.Value;
             timer1.Start();
         }
